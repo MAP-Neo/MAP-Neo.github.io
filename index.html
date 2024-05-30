@@ -149,7 +149,29 @@
             </div>
         </div>
     </section>
-    
+
+    <section class="hero">
+        <!-- <h2 class="title has-text-centered">The performance of base models on different benchmarks</h2> -->
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column is-four-fifths">
+                        <!-- Text with embedded image -->
+                        <div class="item">
+                            <!-- Image with float right -->
+                            <img src="static/images/radar.jpg" style="float: right; margin-left: 20px; max-width: 100%; height: auto;" />
+                            <!-- Caption for image -->
+                            <h2 class="subtitle" style="font-style: italic; clear: both;">
+                                MAP-Neo shows impressive performance on base (Left) and chat (Right) models compared to both popular open-weight and recent transparent large language models with similar sizes.
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <!-- Paper abstract -->
     <section class="hero">
         <div class="hero-body">
@@ -170,27 +192,6 @@
     <!-- End paper abstract -->
 
     <section class="hero">
-        <!-- <h2 class="title has-text-centered">The performance of base models on different benchmarks</h2> -->
-        <div class="hero-body">
-            <div class="container is-max-desktop">
-                <div class="columns is-centered">
-                    <div class="column is-four-fifths">
-                        <!-- Text with embedded image -->
-                        <div class="item">
-                            <!-- Image with float right -->
-                            <img src="static/images/radar.png" style="float: right; margin-left: 20px; max-width: 100%; height: auto;" />
-                            <!-- Caption for image -->
-                            <h2 class="subtitle" style="font-style: italic; clear: both;">
-                                Figure 1. MAP-Neo shows impressive performance on base (Left) and chat (Right) models compared to both popular open-weight and recent transparent large language models with similar sizes.
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="hero">
         <h2 class="title has-text-centered">Matrix Data Pile</h2>
         <div class="hero-body">
             <div class="container is-max-desktop">
@@ -199,14 +200,14 @@
                         <!-- Text with embedded image -->
                         <div class="item">
                             <!-- Image with float right -->
-                            <img src="static/images/data_pile.png" style="float: right; margin-left: 20px; max-width: 100%; height: auto;" />
+                            <img src="static/images/matrix_pile.jpg" style="float: right; margin-left: 20px; max-width: 100%; height: auto;" />
                             <!-- Caption for image -->
                             <h2 class="subtitle" style="font-style: italic; clear: both;">
-                                Figure 2. Statistics of the Matrix Pile Data Distribution: The inner pie chart represents the language distribution, while the outer loop indicates the proportion of meta-categories in the corpus.
+                                Statistics of the Matrix Pile Data Distribution: The inner pie chart represents the language distribution, while the outer loop indicates the proportion of meta-categories in the corpus.
                             </h2>
                             <ul>
-                                <!-- <li><strong>Data Quality</strong> -->
-                                The final composition of the corpus is as follows: 52.55% from Common Crawl, 22.29% from programming code, and the rest from academic papers, books, and other printed materials, as illustrated in Figure 2. <br><br></li>
+                                <li><strong>Compositions. </strong>
+                                The final composition of the corpus is as follows: 52.55% from Common Crawl, 22.29% from programming code, and the rest from academic papers, books, and other printed materials, as illustrated in figure above. <br><br></li>
                             </ul>
                         </div>
                     </div>
@@ -214,6 +215,112 @@
             </div>
         </div>
     </section>
+
+    <section class="hero">
+        <h2 class="title has-text-centered">Document Conversion Pipeline</h2>
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column is-four-fifths">
+                        <!-- Text with embedded image -->
+                        <div class="item">
+                            <!-- Image with float right -->
+                            <img src="static/images/pipeline.jpg" style="float: right; margin-left: 20px; max-width: 100%; height: auto;" />
+                            <!-- Caption for image -->
+                            <h2 class="subtitle" style="font-style: italic; clear: both;">
+                                The document conversion framework is composed of various sub-models for different parts.
+                            </h2>
+                            <ul>
+                                <li><strong>The Pipeline of Document Conversion. </strong>
+                                    The documents are usually better formatted, in concentrated topics, and with more consistent expressions compared to noisy web content. However, it seems to be a gold mine of high-quality corpus except that the golds lie deeply under the digital dirt. Such digital documents are mostly stored as standard PDFs with diverse layouts or scanned images with inconsistent quality, making it challenging to build datasets upon. 
+                                    We observe two core issues in designing an effective conversion pipeline to extract plain text from documents: i) analyzing layout information and identifying different layout elements including text, titles, captions, images, tables, and formulas, and ii) recognizing the relationships among these layout components.<br><br></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero">
+        <h2 class="title has-text-centered">Pre-training</h2>
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column is-four-fifths">
+                        <!-- Text with embedded image -->
+                        <div class="item">
+                            <!-- Image with float right -->
+                            <img src="static/images/data_ratio.jpg" style="float: right; margin-left: 20px; max-width: 100%; height: auto;" />
+                            <!-- Caption for image -->
+                            <h2 class="subtitle" style="font-style: italic; clear: both;">
+                                The data mixture ratios in MAP-Neo pre-training stage.  The left is the fundamental phase and the right shows the decay phase.
+                            </h2>
+                            <ul>
+                                <li><strong>The Data Ratio of Pre-training. </strong>
+                                In the pre-training process, we employ a two-stage pre-training strategy to train the MAP-Neo model. The first stage termed the fundamental phase, involves training the model on a vast corpus of generic texts to develop its general text generation capability. Subsequently, during the decay phase, we focus on enhancing the reliability of the model's generated content by incorporating high-quality data and mode code data. The distribution of data used across different phases is depicted in Figure above. Note that we increase the volume of code data in the decay phase.  
+                                Specifically, during the fundamental phase, since Stack V2 was not yet available, we utilized Stack V1 and repeated the dataset twice to achieve a balanced data ratio. In the decay phase, with the release of Stack V2, we incorporated it as the code component for training. 
+                                Moreover, we perform further data distribution tuning including duplicated high-quality data sources, such as books, judicial decisions, and government reports for training, to improve the model's performance.  <br><br></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero">
+        <h2 class="title has-text-centered">Scaling Law of MAP-Neo</h2>
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column is-four-fifths">
+                        <!-- Text with embedded image -->
+                        <div class="item">
+                            <!-- Image with float right -->
+                            <img src="static/images/NEO_scaling.jpg" style="float: right; margin-left: 20px; max-width: 100%; height: auto;" />
+                            <!-- Caption for image -->
+                            <h2 class="subtitle" style="font-style: italic; clear: both;">
+                                The training loss value is represented by the blue line. The Chinchilla law prediction is shown in yellow, and the NEO scaling law prediction is depicted in green. We fit the Chinchilla law and NEO law on 250M, 460M, and 980M and predict the model behavior on both training samples and samples from the 7B model.
+                            </h2>
+                            <ul>
+                                <li><strong>MAP-Neo Scaling Law. </strong>
+                                    We train models with sizes of 250M, 460M, and 980M parameters using 1000B tokens of training data. These models are then used to predict the scaling law, which guides the training of a model with 7.8B parameters on 3.07T (3065B) tokens during phase 1. To evaluate the fit of the scaling law, we employ the Huber loss ($\delta=1e-3$) between the actual log-loss and the predicted log-loss, along with the $R^2$ value between the true loss and predicted loss. Optimization of the scaling law is performed using the L-BFGS algorithm. This approach is applied consistently across the Chinchilla law and the symbolic music scaling law.
+                                    By leveraging these methods, we aim to ensure the accuracy and reliability of our scaling law predictions, enabling efficient training of large-scale language models.  <br><br></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero">
+        <h2 class="title has-text-centered">Generalization of NEO Scaling Law</h2>
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column is-four-fifths">
+                        <!-- Text with embedded image -->
+                        <div class="item">
+                            <!-- Image with float right -->
+                            <img src="static/images/NEO_deepseek_scaling.jpg" style="float: right; margin-left: 20px; max-width: 100%; height: auto;" />
+                            <!-- Caption for image -->
+                            <h2 class="subtitle" style="font-style: italic; clear: both;">
+                                The loss curve of Chinchilla Law prediction and the NEO Scaling law prediction for the DeepSeek LLM. We use loss values from both 7B and 67B for fitting and prediction.
+                            </h2>
+                            <ul>
+                                <li><strong>Generalization of NEO Scaling Law. </strong>
+                                    The NEO scaling law can be applicable to a broader range of models beyond MAP-Neo. Specifically, in Figure above, we illustrate the fit results of the Chinchilla scaling law (yellow dashed line) and the NEO scaling law (red solid line) to the DeepSeek LLM with the 7B and 67B parameters, which also pre-trained on a dataset with multiple corpura including Chinese, English and codes. We observe that for the largest model sizes (i.e.  MAP-Neo-7B and DeepSeek-67B),
+                                    the predictions of Chinchilla Law tend to underestimate the actual loss when the dataset size (D) is small and overestimate the actual loss as model parameters and training data scale up. In contrast, our predictions of our NEO Scaling Law produce better fitting results when compared with the results of Chinchilla Law for MAP-Neo-7B and DeepSeek-67B.<br><br></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <section class="hero">
         <h2 class="title has-text-centered">The performance of base models on different benchmarks</h2>
