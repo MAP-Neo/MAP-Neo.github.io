@@ -176,6 +176,106 @@
     </section>
     <!-- End paper abstract -->
 
+    <section class="hero">
+        <!-- <h2 class="title has-text-centered">The performance of base models on different benchmarks</h2> -->
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column is-four-fifths">
+                        <!-- Text with embedded image -->
+                        <div class="item">
+                            <!-- Image with float right -->
+                            <img src="static/images/radar.png" style="float: right; margin-left: 20px; max-width: 100%; height: auto;" />
+                            <!-- Caption for image -->
+                            <h2 class="subtitle" style="font-style: italic; clear: both;">
+                                Figure 1. MAP-Neo shows impressive performance on base (Left) and chat (Right) models compared to both popular open-weight and recent transparent large language models with similar sizes.
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero">
+        <h2 class="title has-text-centered">Matrix Data Pile</h2>
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column is-four-fifths">
+                        <!-- Text with embedded image -->
+                        <div class="item">
+                            <!-- Image with float right -->
+                            <img src="static/images/data_pile.png" style="float: right; margin-left: 20px; max-width: 100%; height: auto;" />
+                            <!-- Caption for image -->
+                            <h2 class="subtitle" style="font-style: italic; clear: both;">
+                                Figure 2. Statistics of the Matrix Pile Data Distribution: The inner pie chart represents the language distribution, while the outer loop indicates the proportion of meta-categories in the corpus.
+                            </h2>
+                            <ul>
+                                <!-- <li><strong>Data Quality</strong> -->
+                                The final composition of the corpus is as follows: 52.55% from Common Crawl, 22.29% from programming code, and the rest from academic papers, books, and other printed materials, as illustrated in Figure 2. <br><br></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero">
+        <h2 class="title has-text-centered">The performance of base models on different benchmarks</h2>
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column is-four-fifths">
+                        <!-- Text with embedded image -->
+                        <div class="item">
+                            <!-- Image with float right -->
+                            <img src="static/images/table9.png" style="float: right; margin-left: 20px; max-width: 100%; height: auto;" />
+                            <!-- Caption for image
+                            <h2 class="subtitle" style="font-style: italic; clear: both;">
+                                Above is the data processing flow and deduplication ratios, below is a schematic diagram of similar line deduplication.
+                            </h2> -->
+                            <ul>
+                                <li><strong>Data Quality</strong>
+                                MAP-Neo demonstrates significantly better performance on math, code, and complex reasoning by incorporating high-quality data, compared to previous transparent LLMs, e.g. Amber and Pythia, adopting (presumably) lower quality data.<br><br></li>
+                                <li><strong>Gap between our MAP-Neo and other transparent LLMs</strong><br>
+                                We note that transparent LLMs still significantly lag behind the performance of frontier industrial Open-weight LLMs with similar sizes (e.g. LLama3-8B, Mistral-7B). In contrast, our MAP-Neo can match or even surpass them on part of the automatic benchmarks about math, code, and Chinese knowledge. We call for increased participation in the development of transparent LLMs to further advance the LLM democratization. <br><br></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero">
+        <h2 class="title has-text-centered">The performance of aligned models on different benchmarks</h2>
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column is-four-fifths">
+                        <!-- Text with embedded image -->
+                        <div class="item">
+                            <!-- Image with float right -->
+                            <img src="static/images/table10.png" style="float: right; margin-left: 20px; max-width: 100%; height: auto;" />
+                            <!-- Caption for image
+                            <h2 class="subtitle" style="font-style: italic; clear: both;">
+                                Above is the data processing flow and deduplication ratios, below is a schematic diagram of similar line deduplication.
+                            </h2> -->
+                            <ul>
+                                <li><strong>The effectiveness of Iterative DPO</strong>
+                                In Table 10, when compared to Neo-7B-SFT, Neo-7B-Instruct shows significant improvement on the chat-related benchmark datasets (e.g., AlignBench, AlpacaEval, Arena-Hard, and CHC-Bench), which further demonstrates the effectiveness of our Iterative DPO.<br><br></li>
+                                <li><strong>The performance of the chat model</strong><br>
+                                Table 10 shows that Amber-7B-Chat and OLMo-7B-Instruct perform poorly on Chat Benchmarks. We assume that the limited capabilities of the base model may severely limit the performance of corresponding instruction-tuned models on chat benchmarks. <br><br></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- BibTex citation -->
     <section class="section" id="BibTeX">
         <div class="container is-max-desktop content">
